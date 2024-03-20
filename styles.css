@@ -14,7 +14,9 @@ body, html {
 .text {
     font-size: 24px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.1); /* cor do texto */
+    color: #ff6900; /* cor do texto */
     position: absolute;
+    opacity: 0.3;
+    transform: rotate(-25deg);
 }
 
