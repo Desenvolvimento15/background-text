@@ -1,15 +1,24 @@
-const text = document.querySelector('.text');
-const progressBar = document.querySelector('.progress-bar');
+document.addEventListener("DOMContentLoaded", function() {
+  const text = "Mês do Consumidor";
+  const background = document.querySelector(".background");
 
-text.textContent = 'Mês do consumidor '.repeat(1500);
+  const windowHeight = window.innerHeight;
+  const windowWidth = window.innerWidth;
+  
+  const textWidth = 200; // largura aproximada do texto em pixels
+  const textHeight = 24; // altura aproximada do texto em pixels
 
-calculationProgressBar();
+  const numColumns = Math.ceil(windowWidth / textWidth);
+  const numRows = Math.ceil(windowHeight / textHeight);
 
-document.addEventListener('scroll', calculationProgressBar);
-
-function calculationProgressBar() {
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const percent = (window.pageYOffset / height) * 100;
-
-  progressBar.style.width = percent + '%';
-}
+  for (let i = 0; i < numRows; i++) {
+      for (let j = 0; j < numColumns; j++) {
+          const newText = document.createElement("div");
+          newText.textContent = text;
+          newText.classList.add("text");
+          newText.style.left = j * textWidth + "px";
+          newText.style.top = i * textHeight + "px";
+          background.appendChild(newText);
+      }
+  }
+});
