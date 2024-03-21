@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const windowHeight = window.innerHeight;
   const windowWidth = window.innerWidth;
   
-  const textWidth = 285; // largura aproximada do texto em pixels
+  const textWidth = 225; // largura aproximada do texto em pixels
   const textHeight = 35; // altura aproximada do texto em pixels
 
   const numColumns = Math.ceil(windowWidth / textWidth);
